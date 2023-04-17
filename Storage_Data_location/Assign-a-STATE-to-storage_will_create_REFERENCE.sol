@@ -14,6 +14,6 @@ contract StorageDataLocation {
         myAnoAges[0] = 100;
         myAnoAges[1] = 200;
         myAnoAges[2] = 300;
-        // The myAges STATE will also be in change
+        // The myAges STATE will also be changed too
     }
 }
