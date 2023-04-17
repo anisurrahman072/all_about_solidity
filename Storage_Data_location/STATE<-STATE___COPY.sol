@@ -4,16 +4,17 @@ pragma solidity 0.8.19;
 
 contract StorageDataLocation {
     uint[] myAges = [1, 2, 3, 4];
+    uint[] myAnoAges = myAges;
 
     function getMyAges() external view returns (uint[] memory) {
         return myAges;
     }
 
+    function getMyAnoAges() external view returns (uint[] memory) {
+        return myAnoAges;
+    }
+
     function updateMyAnoAges() external {
-        uint[] storage myAnoAges = myAges;
-        myAnoAges[0] = 100;
-        myAnoAges[1] = 200;
-        myAnoAges[2] = 300;
-        // The myAges STATE will also be changed too
+        myAnoAges = [100, 200, 300]; // ❌ This will not update myAges STATE array
     }
 }

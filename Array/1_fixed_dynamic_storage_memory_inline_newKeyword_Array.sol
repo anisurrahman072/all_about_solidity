@@ -114,7 +114,6 @@ contract StorageDataLocation {
         // myAnoAges6.push(1);   // ❌   ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[4] storage pointer.
     }
 
-
     /**
      
      
@@ -127,19 +126,15 @@ contract StorageDataLocation {
      */
     // --------------------------- Assign Array To Array --------------------
     function assignArrayToArray() public {
-
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for DYNAMIC Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // storage <------------------- storage ============== ❌ Impossible, as i can't create storage array. If i initialize a storage array by a STATE array, then storage variable will be a storage reference.
-        // storage <------------------- storage reference
-        uint[] storage myAlphaAges1 = ages2; 
-        uint[] storage myAlphaAges2 = myAlphaAges1;
-		// storage reference <--------- storage
+        // storage <------------------- storage reference ==== ✅ will create REFERENCE
+        // storage reference <--------- storage
         // storage reference <--------- storage reference
         // STATE <------------------- STATE
         // storage <----------------- STATE
         // storage reference <------- STATE
-
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // memory <-------------------- memory
         // memory <-------------------- memory reference
@@ -157,7 +152,6 @@ contract StorageDataLocation {
         // STATE <--------------------- memory reference
         // memory <-------------------- STATE
         // memory reference <---------- STATE
-
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
         // calldata <------------------ calldata
         // calldata <------------------ calldata reference
@@ -183,8 +177,6 @@ contract StorageDataLocation {
         // STATE <------------------- calldata reference
         // calldata <---------------- STATE
         // calldata reference <------ STATE
-
-
         /**
         
 
@@ -193,12 +185,11 @@ contract StorageDataLocation {
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // storage <------------------- storage
         // storage <------------------- storage reference
-		// storage reference <--------- storage
+        // storage reference <--------- storage
         // storage reference <--------- storage reference
         // STATE <------------------- STATE
         // storage <----------------- STATE
         // storage reference <------- STATE
-
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // memory <-------------------- memory
         // memory <-------------------- memory reference
@@ -216,7 +207,6 @@ contract StorageDataLocation {
         // STATE <--------------------- memory reference
         // memory <-------------------- STATE
         // memory reference <---------- STATE
-
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
         // calldata <------------------ calldata
         // calldata <------------------ calldata reference
@@ -242,17 +232,11 @@ contract StorageDataLocation {
         // STATE <------------------- calldata reference
         // calldata <---------------- STATE
         // calldata reference <------ STATE
-
-
-
         /**
         
 
          */
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Assign DYNAMIC to FIXED array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
-
-
-
         /**
         
 

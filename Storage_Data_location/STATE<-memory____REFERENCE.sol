@@ -6,7 +6,7 @@ contract StorageDataLocation {
     uint[] x;
 
     function setMemory(uint[] memory memoryArray) public {
-        x = memoryArray;
+        x = memoryArray; // ✅ STATE x will be changed
     }
 
     function getTheValue() public view returns (uint[] memory) {
