@@ -15,6 +15,9 @@ contract StorageDataLocation {
      
      
      
+
+
+
      
      */
     // ----------------------------------- Assign Fixed Array into Dynamic memory Array -----------------------------------
@@ -29,7 +32,10 @@ contract StorageDataLocation {
     /**
      
      
-     
+
+
+
+
      
      */
     // --------------------------- Check when Memory/ Storage can be assigned by Inline or new keyword --------------------
@@ -112,6 +118,10 @@ contract StorageDataLocation {
     /**
      
      
+
+
+
+
      
      
      */
