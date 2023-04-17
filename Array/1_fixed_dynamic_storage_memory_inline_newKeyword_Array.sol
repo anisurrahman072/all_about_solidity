@@ -148,12 +148,12 @@ contract StorageDataLocation {
     function assignArrayToArray() public {
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for DYNAMIC Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
-        // storage <------------------- storage ============== ❌ Impossible, as i can't create storage array. If i initialize a storage array by a STATE array, then storage variable will be a storage reference.
+        // storage <------------------- storage ============== ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // storage <------------------- storage reference ==== ✅ will create REFERENCE
-        // storage reference <--------- storage ==============
-        // storage reference <--------- storage reference
-        // STATE <------------------- STATE
-        // storage <----------------- STATE
+        // storage reference <--------- storage ============== ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
+        // storage reference <--------- storage reference ==== ✅ will create REFERENCE
+        // STATE <------------------- STATE ================== ✅ will create COPY
+        // storage <----------------- STATE ==================
         // storage reference <------- STATE
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // memory <-------------------- memory
@@ -252,15 +252,5 @@ contract StorageDataLocation {
         // STATE <------------------- calldata reference
         // calldata <---------------- STATE
         // calldata reference <------ STATE
-        /**
-        
-
-         */
-        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Assign DYNAMIC to FIXED array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
-        /**
-        
-
-         */
-        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Assign FIXED to DYNAMIC array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
     }
 }

@@ -6,7 +6,7 @@ contract StorageDataLocation {
     uint[] myAges = [1, 2, 3, 4];
 
     function assignStorageReferenceToStorage() external {
-        uint[] storage storagePointer = myAges;
+        uint[] storage storagePointer = myAges; // storagePointer is now storage reference
         uint[] storage storageVariable = storagePointer;
         storageVariable.push(100);
         // ✅ This will update the storage Reference Array storagePointer. Which will change STATE myAges Array.
