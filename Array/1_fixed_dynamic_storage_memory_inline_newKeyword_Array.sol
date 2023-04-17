@@ -57,29 +57,36 @@ contract StorageDataLocation {
         myAges2[10] = 100; //  ✅
         // myAges2.push(1); // ❌    ERROR: Member "push" is not available in uint256[] memory outside of storage. You can assign by ARRAY INDEX.
 
+        // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
+        uint[] memory myAges3 = ages2;
+        myAges3[0] = 100; //    ✅
+        // myAges3.push(100); //❌  ERROR: Member "push" is not available in uint256[] memory outside of storage.
+
         /**
         
+
          */
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE  Array  👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // ----------- 🔥🔥 new keyword 🔥🔥 -----------
-        // uint[] storage myAges3 = new uint[](4);     // ❌    ERROR: Type uint256[] memory is not implicitly convertible to expected type uint256[] storage pointer.
+        // uint[] storage myAges4 = new uint[](4);     // ❌    ERROR: Type uint256[] memory is not implicitly convertible to expected type uint256[] storage pointer.
 
         // ----------- 🔥🔥 Inline 🔥🔥 ----------------
-        // uint[] storage myAges4 = [uint(1),2, 3, 4]; // ❌    ERROR: Type uint256[4] memory is not implicitly convertible to expected type uint256[] storage pointer.
+        // uint[] storage myAges5 = [uint(1),2, 3, 4]; // ❌    ERROR: Type uint256[4] memory is not implicitly convertible to expected type uint256[] storage pointer.
 
         // ----------- 🔥🔥 Not Initialized 🔥🔥 --------
-        uint[] storage myAges5;
-        // myAges5[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
-        // myAges5[10] = 100; // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
-        // myAges5.push(1);   // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
+        uint[] storage myAges6;
+        // myAges6[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
+        // myAges6[10] = 100; // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
+        // myAges6.push(1);   // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
 
         // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
-        uint[] storage myAges6 = ages2;
-        myAges6.push(100); //   ✅
-        myAges6[0] = 100; //    ✅
+        uint[] storage myAges7 = ages2;
+        myAges7.push(100); //   ✅
+        myAges7[0] = 100; //    ✅
 
         /**
          
+
 
          */
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for FIXED SIZE ARRAY  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
@@ -99,26 +106,32 @@ contract StorageDataLocation {
         // myAnoAges3[10] = 100; // ❌   ERROR: Out of bounds array access.
         // myAnoAges3.push(1);   // ❌   ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[4] storage pointer.
 
+        // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
+        uint[2] storage myAnoAges4 = ages;
+        myAnoAges4[0] = 100; //     ✅
+        // myAnoAges4.push(100); // ❌ ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[2] storage pointer.
+
         /**
         
+
          */
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE  Array  👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // ----------- 🔥🔥 new keyword 🔥🔥 -----------
-        // uint[4] storage myAnoAges4 = new uint[](4);     // ❌    ERROR: Type uint256[] memory is not implicitly convertible to expected type uint256[4] storage pointer.
+        // uint[4] storage myAnoAges5 = new uint[](4);     // ❌    ERROR: Type uint256[] memory is not implicitly convertible to expected type uint256[4] storage pointer.
 
         // ----------- 🔥🔥 Inline 🔥🔥 ----------------
-        // uint[4] storage myAnoAges5 = [uint(1),2, 3, 4]; // ❌    ERROR: Type uint256[4] memory is not implicitly convertible to expected type uint256[4] storage pointer.
+        // uint[4] storage myAnoAges6 = [uint(1),2, 3, 4]; // ❌    ERROR: Type uint256[4] memory is not implicitly convertible to expected type uint256[4] storage pointer.
 
         // ----------- 🔥🔥 Not Initialized 🔥🔥 --------
-        uint[4] storage myAnoAges6;
-        // myAnoAges6[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
-        // myAnoAges6[10] = 100; // ❌   ERROR: Out of bounds array access.
-        // myAnoAges6.push(1);   // ❌   ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[4] storage pointer.
+        uint[4] storage myAnoAges7;
+        // myAnoAges7[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
+        // myAnoAges7[10] = 100; // ❌   ERROR: Out of bounds array access.
+        // myAnoAges7.push(1);   // ❌   ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[4] storage pointer.
 
         // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
-        uint[2] storage myAnoAges7 = ages;
-        myAnoAges7[0] = 100; //     ✅
-        // myAnoAges7.push(100); // ❌    ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[2] storage pointer.
+        uint[2] storage myAnoAges8 = ages;
+        myAnoAges8[0] = 100; //     ✅
+        // myAnoAges8.push(100); // ❌    ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[2] storage pointer.
     }
 
     /**
