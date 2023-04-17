@@ -81,8 +81,8 @@ contract StorageDataLocation {
 
         // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
         uint[] storage myAges7 = ages2;
-        myAges7.push(100); //   ✅
         myAges7[0] = 100; //    ✅
+        myAges7.push(100); //   ✅
 
         /**
          
