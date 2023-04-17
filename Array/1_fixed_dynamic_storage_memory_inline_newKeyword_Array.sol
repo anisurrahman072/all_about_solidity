@@ -5,7 +5,7 @@ pragma solidity 0.8.19;
 contract StorageDataLocation {
     // ---------------------------------------------- Fixed Size Array ----------------------------------------------------
     uint[2] public ages = [1, 2]; // ✅
-    // uint[2] public ages = new uint[](2); ❌ // TypeError: Type uint256[] memory is not implicitly convertible to expected type uint256[2] storage ref.
+    // uint[2] public ages1 = new uint[](2); ❌ // TypeError: Type uint256[] memory is not implicitly convertible to expected type uint256[2] storage ref.
 
     // ------------------------------------------------- Dynamic Array ----------------------------------------------------
     uint[] public ages2 = [1, 2]; // ✅
@@ -106,5 +106,151 @@ contract StorageDataLocation {
         // myAnoAges6[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
         // myAnoAges6[10] = 100; // ❌   ERROR: Out of bounds array access.
         // myAnoAges6.push(1);   // ❌   ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[4] storage pointer.
+    }
+
+
+    /**
+     
+     
+     
+     
+     */
+    // --------------------------- Assign Array To Array --------------------
+    function assignArrayToArray() public {
+        uint[] memory myAges = new uint[](4);
+        uint[] memory myAges2;
+        uint[] storage myAges5;
+        uint[4] memory myAnoAges2 = [uint(1), 2, 3, 4];
+        uint[4] memory myAnoAges3;
+        uint[4] storage myAnoAges6;
+
+        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for DYNAMIC Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
+        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
+        // storage <------------------- storage
+        // storage <------------------- storage reference
+		// storage reference <--------- storage
+        // storage reference <--------- storage reference
+        // STATE <------------------- STATE
+        // storage <----------------- STATE
+        // storage reference <------- STATE
+
+        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
+        // memory <-------------------- memory
+        // memory <-------------------- memory reference
+        // memory reference <---------- memory
+        // memory reference <---------- memory reference
+        // memory <------------------ storage
+        // memory <------------------ storage reference
+        // memory reference <-------- storage
+        // memory reference <-------- storage reference
+        // storage <----------------- memory
+        // storage <----------------- memory reference
+        // storage reference <------- memory
+        // storage reference <------- memory reference
+        // STATE <--------------------- memory
+        // STATE <--------------------- memory reference
+        // memory <-------------------- STATE
+        // memory reference <---------- STATE
+
+        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
+        // calldata <------------------ calldata
+        // calldata <------------------ calldata reference
+        // calldata reference <-------- calldata
+        // calldata reference <-------- calldata reference
+        // memory <------------------ calldata
+        // memory <------------------ calldata reference
+        // memory reference <-------- calldata
+        // memory reference <-------- calldata reference
+        // calldata <---------------- memory
+        // calldata <---------------- memory reference
+        // calldata reference <------ memory
+        // calldata reference <------ memory reference
+        // storage <-------------------- calldata
+        // storage <-------------------- calldata reference
+        // storage reference <---------- calldata
+        // storage reference <---------- calldata reference
+        // calldata <------------------- storage
+        // calldata <------------------- storage reference
+        // calldata reference <--------- storage
+        // calldata reference <--------- storage reference
+        // STATE <------------------- calldata
+        // STATE <------------------- calldata reference
+        // calldata <---------------- STATE
+        // calldata reference <------ STATE
+
+
+        /**
+        
+
+         */
+        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for FIXED Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
+        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
+        // storage <------------------- storage
+        // storage <------------------- storage reference
+		// storage reference <--------- storage
+        // storage reference <--------- storage reference
+        // STATE <------------------- STATE
+        // storage <----------------- STATE
+        // storage reference <------- STATE
+
+        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
+        // memory <-------------------- memory
+        // memory <-------------------- memory reference
+        // memory reference <---------- memory
+        // memory reference <---------- memory reference
+        // memory <------------------ storage
+        // memory <------------------ storage reference
+        // memory reference <-------- storage
+        // memory reference <-------- storage reference
+        // storage <----------------- memory
+        // storage <----------------- memory reference
+        // storage reference <------- memory
+        // storage reference <------- memory reference
+        // STATE <--------------------- memory
+        // STATE <--------------------- memory reference
+        // memory <-------------------- STATE
+        // memory reference <---------- STATE
+
+        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
+        // calldata <------------------ calldata
+        // calldata <------------------ calldata reference
+        // calldata reference <-------- calldata
+        // calldata reference <-------- calldata reference
+        // memory <------------------ calldata
+        // memory <------------------ calldata reference
+        // memory reference <-------- calldata
+        // memory reference <-------- calldata reference
+        // calldata <---------------- memory
+        // calldata <---------------- memory reference
+        // calldata reference <------ memory
+        // calldata reference <------ memory reference
+        // storage <-------------------- calldata
+        // storage <-------------------- calldata reference
+        // storage reference <---------- calldata
+        // storage reference <---------- calldata reference
+        // calldata <------------------- storage
+        // calldata <------------------- storage reference
+        // calldata reference <--------- storage
+        // calldata reference <--------- storage reference
+        // STATE <------------------- calldata
+        // STATE <------------------- calldata reference
+        // calldata <---------------- STATE
+        // calldata reference <------ STATE
+
+
+
+        /**
+        
+
+         */
+        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Assign DYNAMIC to FIXED array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
+
+
+
+        /**
+        
+
+         */
+        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Assign FIXED to DYNAMIC array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
     }
 }
