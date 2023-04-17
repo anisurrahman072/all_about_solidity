@@ -127,17 +127,13 @@ contract StorageDataLocation {
      */
     // --------------------------- Assign Array To Array --------------------
     function assignArrayToArray() public {
-        uint[] memory myAges = new uint[](4);
-        uint[] memory myAges2;
-        uint[] storage myAges5;
-        uint[4] memory myAnoAges2 = [uint(1), 2, 3, 4];
-        uint[4] memory myAnoAges3;
-        uint[4] storage myAnoAges6;
 
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for DYNAMIC Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
-        // storage <------------------- storage
+        // storage <------------------- storage ============== ❌ Impossible, as i can't create storage array. If i initialize a storage array by a STATE array, then storage variable will be a storage reference.
         // storage <------------------- storage reference
+        uint[] storage myAlphaAges1 = ages2; 
+        uint[] storage myAlphaAges2 = myAlphaAges1;
 		// storage reference <--------- storage
         // storage reference <--------- storage reference
         // STATE <------------------- STATE
