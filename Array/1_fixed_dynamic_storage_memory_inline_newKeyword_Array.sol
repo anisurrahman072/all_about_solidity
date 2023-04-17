@@ -39,10 +39,7 @@ contract StorageDataLocation {
      
      */
     // --------------------------- Check when Memory/ Storage can be assigned by Inline or new keyword --------------------
-    function checkMemoryOrStorageArrayWhenCanBeAssignedByInlineOrNew()
-        public
-        pure
-    {
+    function checkMemoryOrStorageArrayWhenCanBeAssignedByInlineOrNew() public {
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for DYNAMIC Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // ----------- 🔥🔥 new keyword 🔥🔥 -----------
@@ -75,6 +72,11 @@ contract StorageDataLocation {
         // myAges5[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
         // myAges5[10] = 100; // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
         // myAges5.push(1);   // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
+
+        // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
+        uint[] storage myAges6 = ages2;
+        myAges6.push(100); //   ✅
+        myAges6[0] = 100; //    ✅
 
         /**
          
@@ -112,6 +114,11 @@ contract StorageDataLocation {
         // myAnoAges6[0] = 100;  // ❌   ERROR: This variable is of storage pointer type and can be accessed without prior assignment, which would lead to undefined behaviour.
         // myAnoAges6[10] = 100; // ❌   ERROR: Out of bounds array access.
         // myAnoAges6.push(1);   // ❌   ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[4] storage pointer.
+
+        // ----------- 🔥🔥 Initialized by STATE array 🔥🔥 ----
+        uint[2] storage myAnoAges7 = ages;
+        myAnoAges7[0] = 100; //     ✅
+        // myAnoAges7.push(100); // ❌    ERROR: Member "push" not found or not visible after argument-dependent lookup in uint256[2] storage pointer.
     }
 
     /**
@@ -130,7 +137,7 @@ contract StorageDataLocation {
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // storage <------------------- storage ============== ❌ Impossible, as i can't create storage array. If i initialize a storage array by a STATE array, then storage variable will be a storage reference.
         // storage <------------------- storage reference ==== ✅ will create REFERENCE
-        // storage reference <--------- storage
+        // storage reference <--------- storage ==============
         // storage reference <--------- storage reference
         // STATE <------------------- STATE
         // storage <----------------- STATE
