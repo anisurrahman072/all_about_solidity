@@ -8,6 +8,7 @@ contract StorageDataLocation {
         uint[] memory anotherMemory = memoryPointer;
         anotherMemory[1] = 100;
         anotherMemory[3] = 100; // ✅ The memoryPointer Array will also be changed
+        // anotherMemory[13] = 100; // ❌ ERROR will be occurred for index 13 accessing
         return memoryPointer;
     }
 }
