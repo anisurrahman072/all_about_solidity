@@ -161,7 +161,7 @@ contract StorageDataLocation {
         // memory <-------------------- memory =============== ✅ 👨‍💻 will create REFERENCE
         // memory <-------------------- memory reference ===== ✅ 👨‍💻 will create REFERENCE
         // memory reference <---------- memory =============== ✅ 👨‍💻 will create REFERENCE
-        // memory reference <---------- memory reference
+        // memory reference <---------- memory reference ===== ✅ 👨‍💻 will create REFERENCE
         // memory <------------------ storage
         // memory <------------------ storage reference
         // memory reference <-------- storage
