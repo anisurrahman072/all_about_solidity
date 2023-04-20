@@ -158,8 +158,8 @@ contract StorageDataLocation {
         // STATE <------------------- storage ================ ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // STATE <------------------- storage reference ====== ✅ 👨‍💻 will create REFERENCE
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
-        // memory <-------------------- memory
-        // memory <-------------------- memory reference
+        // memory <-------------------- memory =============== ✅ 👨‍💻 will create REFERENCE
+        // memory <-------------------- memory reference ===== ✅ 👨‍💻 will create REFERENCE
         // memory reference <---------- memory
         // memory reference <---------- memory reference
         // memory <------------------ storage
