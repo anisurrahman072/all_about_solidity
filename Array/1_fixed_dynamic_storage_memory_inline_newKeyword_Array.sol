@@ -149,14 +149,14 @@ contract StorageDataLocation {
         // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for DYNAMIC Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // storage <------------------- storage ============== ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
-        // storage <------------------- storage reference ==== ✅ will create REFERENCE
+        // storage <------------------- storage reference ==== ✅ 👨‍💻 will create REFERENCE
         // storage reference <--------- storage ============== ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
-        // storage reference <--------- storage reference ==== ✅ will create REFERENCE
-        // STATE <------------------- STATE ================== ✅ will create COPY
-        // storage <----------------- STATE ================== ✅ will create REFERENCE
-        // storage reference <------- STATE ================== ✅ will create REFERENCE
+        // storage reference <--------- storage reference ==== ✅ 👨‍💻 will create REFERENCE
+        // STATE <------------------- STATE ================== ✅ 👨‍💻 will create COPY
+        // storage <----------------- STATE ================== ✅ 👨‍💻 will create REFERENCE
+        // storage reference <------- STATE ================== ✅ 👨‍💻 will create REFERENCE
         // STATE <------------------- storage ================ ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
-        // STATE <------------------- storage reference ====== ✅ will create REFERENCE
+        // STATE <------------------- storage reference ====== ✅ 👨‍💻 will create REFERENCE
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // memory <-------------------- memory
         // memory <-------------------- memory reference
