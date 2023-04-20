@@ -160,7 +160,7 @@ contract StorageDataLocation {
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
         // memory <-------------------- memory =============== ✅ 👨‍💻 will create REFERENCE
         // memory <-------------------- memory reference ===== ✅ 👨‍💻 will create REFERENCE
-        // memory reference <---------- memory
+        // memory reference <---------- memory =============== ✅ 👨‍💻 will create REFERENCE
         // memory reference <---------- memory reference
         // memory <------------------ storage
         // memory <------------------ storage reference
