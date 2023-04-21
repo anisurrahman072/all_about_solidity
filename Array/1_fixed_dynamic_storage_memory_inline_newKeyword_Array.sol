@@ -172,7 +172,7 @@ contract StorageDataLocation {
         // storage reference <------- memory reference
         // STATE <--------------------- memory
         // STATE <--------------------- memory reference
-        // memory <-------------------- STATE
+        // memory <-------------------- STATE =============== ✅ 👨‍💻 will create COPY
         // memory reference <---------- STATE
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
         // calldata <------------------ calldata
