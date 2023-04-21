@@ -3,13 +3,10 @@
 pragma solidity 0.8.19;
 
 contract StorageDataLocation {
-    uint[] x;
+    uint[] myState = [1, 2, 3, 4];
 
-    function setMemory(uint[] memory memoryArray) public {
-        x = memoryArray; // ✅ STATE x will be changed
-    }
-
-    function getTheValue() public view returns (uint[] memory) {
-        return x;
+    function assignSTATEToStorage() external returns (uint[] memory) {
+        myState = new uint[](4); // STATE myState will be changed
+        return myState;
     }
 }

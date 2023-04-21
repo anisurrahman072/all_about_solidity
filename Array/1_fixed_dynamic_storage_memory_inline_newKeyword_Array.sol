@@ -170,7 +170,7 @@ contract StorageDataLocation {
         // storage <----------------- memory reference ======= ❌ 👨‍💻 ERROR.
         // storage reference <------- memory ================= ❌ 👨‍💻 ERROR.
         // storage reference <------- memory reference ======= ❌ 👨‍💻 ERROR.
-        // STATE <--------------------- memory
+        // STATE <--------------------- memory =============== ✅ 👨‍💻 will create REFERENCE (wmeans STATE value will be changed)
         // STATE <--------------------- memory reference
         // memory <-------------------- STATE =============== ✅ 👨‍💻 will create COPY
         // memory reference <---------- STATE
