@@ -6,7 +6,8 @@ contract StorageDataLocation {
     uint[] myState = [1, 2, 3, 4];
 
     function assignSTATEToStorage() external returns (uint[] memory) {
-        myState = new uint[](4); // ✅ STATE myState will be changed
+        uint[] memory memoryPointer = new uint[](4);
+        myState = memoryPointer; // ✅ STATE myState will be changed
         return myState;
     }
 }
