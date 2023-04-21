@@ -166,7 +166,7 @@ contract StorageDataLocation {
         // memory <------------------ storage reference ====== ✅ 👨‍💻 will create COPY
         // memory reference <-------- storage ================ ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // memory reference <-------- storage reference ====== ✅ 👨‍💻 will create REFERENCE
-        // storage <----------------- memory
+        // storage <----------------- memory ================= ❌ 👨‍💻 Impossible, in technically.
         // storage <----------------- memory reference
         // storage reference <------- memory
         // storage reference <------- memory reference
