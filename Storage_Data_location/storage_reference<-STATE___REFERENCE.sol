@@ -6,13 +6,14 @@ contract StorageDataLocation {
     uint[] theSTATE = [1, 2, 3, 4];
     uint[] anotherSTATE = [10, 20, 30, 40];
 
-    function assignSTATEToStorage() external {
+    function assignSTATEToStorage() external returns (uint[] memory) {
         uint[] storage storagePointer = anotherSTATE;
         storagePointer = theSTATE;
         storagePointer.push(100); // ✅ theSTATE STATE will be changed
+        return theSTATE;
     }
 
-    function getSTATEvalue() external view returns (uint[] memory) {
-        return theSTATE; // ✅ This theSTATE STATE has been changed
+    function checkAnotherSTATE() external view returns (uint[] memory) {
+        return anotherSTATE; // ❌ but anotherSTATE value will not be changed as Ponter was removed from anotherSTATE
     }
 }
