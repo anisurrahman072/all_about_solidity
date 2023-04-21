@@ -173,7 +173,7 @@ contract StorageDataLocation {
         // STATE <--------------------- memory =============== ✅ 👨‍💻 will create REFERENCE (wmeans STATE value will be changed)
         // STATE <--------------------- memory reference ===== ✅ 👨‍💻 will create REFERENCE (wmeans STATE value will be changed)
         // memory <-------------------- STATE ================ ✅ 👨‍💻 will create COPY
-        // memory reference <---------- STATE ================
+        // memory reference <---------- STATE ================ ✅ 👨‍💻 will create COPY
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
         // calldata <------------------ calldata
         // calldata <------------------ calldata reference
