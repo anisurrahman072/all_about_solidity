@@ -186,7 +186,7 @@ contract StorageDataLocation {
         // calldata <---------------- memory ================= ❌ 👨‍💻 ERROR.
         // calldata <---------------- memory reference ======= ❌ 👨‍💻 ERROR.
         // calldata reference <------ memory ================= ❌ 👨‍💻 ERROR.
-        // calldata reference <------ memory reference
+        // calldata reference <------ memory reference ======= ❌ 👨‍💻 ERROR.
         // storage <-------------------- calldata
         // storage <-------------------- calldata reference
         // storage reference <---------- calldata
