@@ -193,8 +193,8 @@ contract StorageDataLocation {
         // storage reference <---------- calldata reference == ❌ 👨‍💻 ERROR.
         // calldata <------------------- storage ============= ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // calldata <------------------- storage reference === ❌ 👨‍💻 ERROR.
-        // calldata reference <--------- storage
-        // calldata reference <--------- storage reference
+        // calldata reference <--------- storage ============= ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
+        // calldata reference <--------- storage reference === ❌ 👨‍💻 ERROR.
         // STATE <------------------- calldata
         // STATE <------------------- calldata reference
         // calldata <---------------- STATE
