@@ -187,8 +187,8 @@ contract StorageDataLocation {
         // calldata <---------------- memory reference ======= ❌ 👨‍💻 ERROR.
         // calldata reference <------ memory ================= ❌ 👨‍💻 ERROR.
         // calldata reference <------ memory reference ======= ❌ 👨‍💻 ERROR.
-        // storage <-------------------- calldata
-        // storage <-------------------- calldata reference
+        // storage <-------------------- calldata ============ ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference.
+        // storage <-------------------- calldata reference == ❌ 👨‍💻 ERROR.
         // storage reference <---------- calldata
         // storage reference <---------- calldata reference
         // calldata <------------------- storage
