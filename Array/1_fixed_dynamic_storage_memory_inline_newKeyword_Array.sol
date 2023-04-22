@@ -195,10 +195,10 @@ contract StorageDataLocation {
         // calldata <------------------- storage reference === ❌ 👨‍💻 ERROR.
         // calldata reference <--------- storage ============= ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // calldata reference <--------- storage reference === ❌ 👨‍💻 ERROR.
-        // STATE <------------------- calldata
-        // STATE <------------------- calldata reference
-        // calldata <---------------- STATE
-        // calldata reference <------ STATE
+        // STATE <------------------- calldata =============== ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference. Another big reason is, you can't allocate Arrays & structs as calldata.
+        // STATE <------------------- calldata reference ===== ✅ 👨‍💻 will create REFERENCE
+        // calldata <---------------- STATE ================== ❌ 👨‍💻 ERROR.
+        // calldata reference <------ STATE ================== ❌ 👨‍💻 ERROR.
         /**
         
 
