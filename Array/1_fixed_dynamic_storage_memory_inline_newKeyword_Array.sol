@@ -164,25 +164,25 @@ contract StorageDataLocation {
         // memory reference <---------- memory reference ===== ✅ 👨‍💻 will create REFERENCE
         // memory <------------------ storage ================ ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // memory <------------------ storage reference ====== ✅ 👨‍💻 will create COPY
-        // memory reference <-------- storage ================ ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
+        // memory reference <-------- storage ================ ❌ Impossible, in technically. As, we can't keep a storage in Right Hand Side of an Equal Operator (=) because as soon as we declare a storage it creates a Storage Reference.
         // memory reference <-------- storage reference ====== ✅ 👨‍💻 will create REFERENCE
         // storage <----------------- memory ================= ❌ 👨‍💻 ERROR.
         // storage <----------------- memory reference ======= ❌ 👨‍💻 ERROR.
         // storage reference <------- memory ================= ❌ 👨‍💻 ERROR.
         // storage reference <------- memory reference ======= ❌ 👨‍💻 ERROR.
-        // STATE <--------------------- memory =============== ✅ 👨‍💻 will create REFERENCE (wmeans STATE value will be changed)
-        // STATE <--------------------- memory reference ===== ✅ 👨‍💻 will create REFERENCE (wmeans STATE value will be changed)
+        // STATE <--------------------- memory =============== ✅ 👨‍💻 will create REFERENCE (means STATE value will be changed)
+        // STATE <--------------------- memory reference ===== ✅ 👨‍💻 will create REFERENCE (means STATE value will be changed)
         // memory <-------------------- STATE ================ ✅ 👨‍💻 will create COPY
         // memory reference <---------- STATE ================ ✅ 👨‍💻 will create COPY
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
-        // calldata <------------------ calldata
-        // calldata <------------------ calldata reference
-        // calldata reference <-------- calldata
-        // calldata reference <-------- calldata reference
-        // memory <------------------ calldata
-        // memory <------------------ calldata reference
-        // memory reference <-------- calldata
-        // memory reference <-------- calldata reference
+        // calldata <------------------ calldata ============= ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference. Another big reason is, you can't allocate Arrays & structs as calldata.
+        // calldata <------------------ calldata reference === ✅ 👨‍💻 will create COPY or REFERENCE (Not sure yet)
+        // calldata reference <-------- calldata ============= ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference. Another big reason is, you can't allocate Arrays & structs as calldata.
+        // calldata reference <-------- calldata reference === ✅ 👨‍💻 will create REFERENCE
+        // memory <------------------ calldata =============== ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference.
+        // memory <------------------ calldata reference ===== ✅ 👨‍💻 will create COPY
+        // memory reference <-------- calldata =============== ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference.
+        // memory reference <-------- calldata reference ===== ✅ 👨‍💻 will create COPY
         // calldata <---------------- memory
         // calldata <---------------- memory reference
         // calldata reference <------ memory
