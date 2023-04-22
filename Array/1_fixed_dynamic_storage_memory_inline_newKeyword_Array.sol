@@ -185,7 +185,7 @@ contract StorageDataLocation {
         // memory reference <-------- calldata reference ===== ✅ 👨‍💻 will create COPY
         // calldata <---------------- memory ================= ❌ 👨‍💻 ERROR.
         // calldata <---------------- memory reference ======= ❌ 👨‍💻 ERROR.
-        // calldata reference <------ memory
+        // calldata reference <------ memory ================= ❌ 👨‍💻 ERROR.
         // calldata reference <------ memory reference
         // storage <-------------------- calldata
         // storage <-------------------- calldata reference
