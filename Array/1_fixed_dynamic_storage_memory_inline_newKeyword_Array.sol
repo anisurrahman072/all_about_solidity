@@ -183,8 +183,8 @@ contract StorageDataLocation {
         // memory <------------------ calldata reference ===== ✅ 👨‍💻 will create COPY
         // memory reference <-------- calldata =============== ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference.
         // memory reference <-------- calldata reference ===== ✅ 👨‍💻 will create COPY
-        // calldata <---------------- memory
-        // calldata <---------------- memory reference
+        // calldata <---------------- memory ================= ❌ 👨‍💻 ERROR.
+        // calldata <---------------- memory reference ======= ❌ 👨‍💻 ERROR.
         // calldata reference <------ memory
         // calldata reference <------ memory reference
         // storage <-------------------- calldata
