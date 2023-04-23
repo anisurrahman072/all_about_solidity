@@ -176,7 +176,7 @@ contract StorageDataLocation {
         // memory reference <---------- STATE ================ ✅ 👨‍💻 will create COPY
         // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
         // calldata <------------------ calldata ============= ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference. Another big reason is, you can't allocate Arrays & structs as calldata.
-        // calldata <------------------ calldata reference === ✅ 👨‍💻 will create COPY or REFERENCE (Not sure yet)
+        // calldata <------------------ calldata reference === ✅ 👨‍💻 will create REFERENCE
         // calldata reference <-------- calldata ============= ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference. Another big reason is, you can't allocate Arrays & structs as calldata.
         // calldata reference <-------- calldata reference === ✅ 👨‍💻 will create REFERENCE
         // memory <------------------ calldata =============== ❌ Impossible, in technically. As, we can't keep a calldata in Right Hand Side of an Equal Operator (=) because as soon as we declare a calldata it creates a calldata Reference.
@@ -205,18 +205,18 @@ contract StorageDataLocation {
 
          */
         // What Jean Cavlr said is here from above analysis
-        // 1. storage reference <---------------------------- STATE + storage reference
-        // 2. memory reference <----------------------------- STATE + storage reference + memory + memory reference + calldata reference
-        // 3. calldata reference <--------------------------- calldata reference
+        // 1. storage reference <---------------------------- STATE (R) + storage reference (R)
+        // 2. memory reference <----------------------------- STATE (C) + storage reference (R) + memory (R) + memory reference (R) + calldata reference (C)
+        // 3. calldata reference <--------------------------- calldata reference (R)
         /*
 
 
 
          */
         // Others rules of Assigning (Only what you can do)
-        // 1. STATE <--------------------------------------- STATE + storage reference + memory + memory reference + calldata reference
-        // 2. storage <------------------------------------- STATE + storage reference
-        // 3. memory <-------------------------------------- STATE + storage reference + memory + memory reference + calldata reference
-        // 4. calldata <------------------------------------ calldata reference
+        // 1. STATE <---------------------------------------- STATE (C) + storage reference (R) + memory (R) + memory reference (R) + calldata reference (R)
+        // 2. storage <-------------------------------------- STATE (R) + storage reference (R)
+        // 3. memory <--------------------------------------- STATE (C) + storage reference (C) + memory (R) + memory reference (R) + calldata reference (C)
+        // 4. calldata <------------------------------------- calldata reference (R)
     }
 }
