@@ -199,60 +199,24 @@ contract StorageDataLocation {
         // STATE <------------------- calldata reference ===== ✅ 👨‍💻 will create REFERENCE
         // calldata <---------------- STATE ================== ❌ 👨‍💻 ERROR.
         // calldata reference <------ STATE ================== ❌ 👨‍💻 ERROR.
-        /**
-        
+        /*
+
+
 
          */
-        // ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️  Check for FIXED Array  ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️ ⚪️
-        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  STORAGE & STATE  Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
-        // storage <------------------- storage
-        // storage <------------------- storage reference
-        // storage reference <--------- storage
-        // storage reference <--------- storage reference
-        // STATE <------------------- STATE
-        // storage <----------------- STATE
-        // storage reference <------- STATE
-        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈 👈
-        // memory <-------------------- memory
-        // memory <-------------------- memory reference
-        // memory reference <---------- memory
-        // memory reference <---------- memory reference
-        // memory <------------------ storage
-        // memory <------------------ storage reference
-        // memory reference <-------- storage
-        // memory reference <-------- storage reference
-        // storage <----------------- memory
-        // storage <----------------- memory reference
-        // storage reference <------- memory
-        // storage reference <------- memory reference
-        // STATE <--------------------- memory
-        // STATE <--------------------- memory reference
-        // memory <-------------------- STATE
-        // memory reference <---------- STATE
-        // 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉 👉  CALLDATA, MEMORY, STORAGE, STATE Array 👈 👈 👈 👈 👈 👈 👈 👈  👈 👈 👈 👈
-        // calldata <------------------ calldata
-        // calldata <------------------ calldata reference
-        // calldata reference <-------- calldata
-        // calldata reference <-------- calldata reference
-        // memory <------------------ calldata
-        // memory <------------------ calldata reference
-        // memory reference <-------- calldata
-        // memory reference <-------- calldata reference
-        // calldata <---------------- memory
-        // calldata <---------------- memory reference
-        // calldata reference <------ memory
-        // calldata reference <------ memory reference
-        // storage <-------------------- calldata
-        // storage <-------------------- calldata reference
-        // storage reference <---------- calldata
-        // storage reference <---------- calldata reference
-        // calldata <------------------- storage
-        // calldata <------------------- storage reference
-        // calldata reference <--------- storage
-        // calldata reference <--------- storage reference
-        // STATE <------------------- calldata
-        // STATE <------------------- calldata reference
-        // calldata <---------------- STATE
-        // calldata reference <------ STATE
+        // What Jean Cavlr said is here from above analysis
+        // 1. storage reference <---------------------------- STATE + storage reference
+        // 2. memory reference <----------------------------- STATE + storage reference + memory + memory reference + calldata reference
+        // 3. calldata reference <--------------------------- calldata reference
+        /*
+
+
+
+         */
+        // Others rules of Assigning (Only what you can do)
+        // 1. STATE <--------------------------------------- STATE + storage reference + memory + memory reference + calldata reference
+        // 2. storage <------------------------------------- STATE + storage reference
+        // 3. memory <-------------------------------------- STATE + storage reference + memory + memory reference + calldata reference
+        // 4. calldata <------------------------------------ calldata reference
     }
 }
