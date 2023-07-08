@@ -6,7 +6,8 @@ contract uintCopyOrReferenceCheck {
     uint myState = 100;
 
     function assignUintToAnother() external view returns (uint) {
-        uint storageVariable = myState; // ❌ STATE myState will not be changed
+        uint storageVariable = myState; // ❌ STATE myState will not be changed.
+        // 👆 Another point is, local variable storageVariable stays in STACK, not in storage/ memory data location.
         storageVariable = 500;
         return myState;
     }
